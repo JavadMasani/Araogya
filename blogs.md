@@ -2,4 +2,4 @@
 title: Blogs
 ---
 
-- [Morning Back Stiffness Kyun Hoti Hai?](/morning-back-stiffness)
+- [Morning Back Stiffness Kyun Hoti Hai?](_posts/morning-back-stiffness)
