@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Blogs
 ---
 
-
-- [Morning Back Stiffness Kyun Hoti Hai?](_posts/morning-back-stiffness)
+- [Morning Back Stiffness]({{ site.baseurl }}/morning-back-stiffness.html)
