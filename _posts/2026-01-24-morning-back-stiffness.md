@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Morning Back Stiffness Kyun Hoti Hai?"
-permalink: /morning-back-stiffness.html
+permalink: /Araogya/morning-back-stiffness
 ---
 
 Subah uthte hi kamar me jakkad kyun hoti hai?
