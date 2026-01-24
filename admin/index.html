@@ -1,12 +1,25 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <title>Content Manager</title>
-    <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
+
+    <!-- IMPORTANT: Manual init -->
+    <script>
+      window.CMS_MANUAL_INIT = true;
+    </script>
   </head>
+
   <body>
-    <!-- REQUIRED ROOT ELEMENT -->
+    <!-- REQUIRED ROOT -->
     <div id="nc-root"></div>
+
+    <!-- LOAD CMS AFTER ROOT -->
+    <script src="https://unpkg.com/decap-cms@3.10.0/dist/decap-cms.js"></script>
+
+    <!-- INIT CMS -->
+    <script>
+      CMS.init();
+    </script>
   </body>
 </html>
