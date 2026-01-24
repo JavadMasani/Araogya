@@ -1,0 +1,21 @@
+backend:
+  name: github
+  repo: javadmasani/Araogya
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/Araogya/assets/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blogs"
+    folder: "_posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Thumbnail Image", name: "thumbnail", widget: "image" }
+      - { label: "Category", name: "category", widget: "string" }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Body", name: "body", widget: "markdown" }
