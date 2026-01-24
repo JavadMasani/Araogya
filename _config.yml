@@ -1,2 +1,5 @@
 title: Dr. Javad Masani
+baseurl: "/Araogya"
+
+permalink: /:title.html
 description: Physiotherapy & Health Blogs
