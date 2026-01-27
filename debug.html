@@ -1,0 +1,14 @@
+---
+layout: default
+title: Debug Posts
+---
+
+<h1>Debug: Posts List</h1>
+
+<ul>
+  {% for post in site.posts %}
+    <li>
+      {{ post.title }} → {{ post.url }}
+    </li>
+  {% endfor %}
+</ul>
