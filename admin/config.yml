@@ -12,6 +12,8 @@ collections:
     label: "Blogs"
     folder: "_posts"
     create: true
+    format: "frontmatter"
+    extension: "md"
     slug: "{{year}}-{{month}}-{{day}}-{{fields.slug}}"
 
     fields:
@@ -20,11 +22,11 @@ collections:
         widget: "hidden"
         default: "post"
 
-      - label: "Title (Gujarati allowed)"
+      - label: "Title"
         name: "title"
         widget: "string"
 
-      - label: "Slug (English only)"
+      - label: "Slug (english-only)"
         name: "slug"
         widget: "string"
 
@@ -32,7 +34,7 @@ collections:
         name: "date"
         widget: "datetime"
 
-      - label: "Thumbnail Image"
+      - label: "Thumbnail"
         name: "thumbnail"
         widget: "image"
         required: false
