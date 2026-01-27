@@ -1,40 +1,6 @@
 ---
+layout: site
 ---
-<!DOCTYPE html>
-<html lang="gu">
-<head>
-  <meta charset="UTF-8">
-  <title>
-  {% if page.seo_title %}
-    {{ page.seo_title }}
-  {% else %}
-    {{ page.title }}
-  {% endif %}
-</title>
-
-<meta name="description" content="{{ page.seo_description | default: page.excerpt | strip_html | truncate: 160 }}">
-
-<meta property="og:title" content="{{ page.title }}">
-<meta property="og:description" content="{{ page.seo_description | default: page.excerpt | strip_html }}">
-<meta property="og:type" content="article">
-<meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
-<meta property="og:image" content="{{ page.thumbnail }}">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ page.title }}">
-<meta name="twitter:description" content="{{ page.seo_description | default: page.excerpt | strip_html }}">
-<meta name="twitter:image" content="{{ page.thumbnail }}">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    body { font-family: 'Poppins', 'Noto Sans Gujarati', sans-serif; }
-  </style>
-</head>
-<body class="bg-white text-slate-800">
 
 <article class="py-24 bg-white">
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,8 +10,9 @@
            class="w-full h-80 object-cover rounded-3xl mb-12">
     {% endif %}
 
-    <h1 class="text-3xl md:text-4xl font-bold text-slate-900
-               mb-6 leading-tight font-gujarati">
+    <h1
+      class="text-3xl md:text-4xl font-bold text-slate-900
+             mb-8 leading-snug font-gujarati">
       {{ page.title }}
     </h1>
 
@@ -54,17 +21,25 @@
       {% if page.category %} · {{ page.category }}{% endif %}
     </p>
 
-    <div class="prose prose-slate prose-lg max-w-none
-                leading-relaxed font-gujarati">
+    <div
+      class="prose prose-slate prose-lg max-w-none
+             leading-relaxed font-gujarati">
       {{ content }}
     </div>
 
-    <!-- NAV -->
-    <div class="mt-16 flex justify-between border-t pt-6">
+    <!-- SHARE -->
+    <div class="mt-16 pt-8 border-t flex justify-between items-center">
       <a href="{{ site.baseurl }}/"
          class="text-teal-600 font-bold">
         ← Back to Home
       </a>
+
+      <a target="_blank"
+         href="https://wa.me/?text={{ site.url }}{{ site.baseurl }}{{ page.url }}"
+         class="text-green-600 font-bold">
+        <i class="fab fa-whatsapp"></i> Share
+      </a>
+
       <a href="{{ site.baseurl }}/blogs"
          class="text-teal-600 font-bold">
         View All Blogs →
@@ -72,18 +47,4 @@
     </div>
 
   </div>
-
-    <!-- Share -->
-    <div class="mt-14 pt-8 border-t flex gap-4">
-      <a target="_blank"
-         href="https://wa.me/?text={{ site.url }}{{ site.baseurl }}{{ page.url }}"
-         class="text-green-600 font-bold">
-        <i class="fab fa-whatsapp"></i> Share
-      </a>
-    </div>
-
-  </div>
 </article>
-
-</body>
-</html>
