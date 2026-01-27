@@ -2,7 +2,36 @@
 <html lang="gu">
 <head>
   <meta charset="UTF-8">
-  <title>{{ page.title | default: "Dr. Javad Masani" }}</title>
+
+  <title>
+    {% if page.seo_title %}
+      {{ page.seo_title }}
+    {% else %}
+      {{ page.title | default: "Dr. Javad Masani" }}
+    {% endif %}
+  </title>
+
+  <meta name="description"
+        content="{{ page.seo_description | default: page.excerpt | strip_html | truncate: 160 }}">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description"
+        content="{{ page.seo_description | default: page.excerpt | strip_html }}">
+  <meta property="og:type" content="article">
+  <meta property="og:url"
+        content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+  <meta property="og:image"
+        content="{{ page.thumbnail | default: site.default_og_image }}">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page.title }}">
+  <meta name="twitter:description"
+        content="{{ page.seo_description | default: page.excerpt | strip_html }}">
+  <meta name="twitter:image"
+        content="{{ page.thumbnail | default: site.default_og_image }}">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Tailwind -->
@@ -16,7 +45,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap"
         rel="stylesheet">
 
-  <!-- SAME font rule -->
   <style>
     body {
       font-family: 'Poppins','Noto Sans Gujarati',sans-serif;
@@ -24,9 +52,82 @@
   </style>
 </head>
 
-<body class="text-slate-800 bg-white">
+<body class="bg-white text-slate-800">
 
-  {{ content }}
+  <!-- 🔹 NAVIGATION (same as home) -->
+  <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <div class="w-10 h-10 bg-teal-600 rounded-lg flex items-center justify-center text-white">
+                        <i class="fas fa-heartbeat text-xl"></i>
+                    </div>
+                    <span class="font-bold text-xl tracking-tight text-teal-800">Dr. Javad Masani</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link font-medium">Home</a>
+                        <a href="#about" class="nav-link font-medium">About</a>
+                        <a href="#services" class="nav-link font-medium">Services</a>
+                        <a href="#blog" class="nav-link font-medium">Blog</a>
+                        <a href="#contact" class="bg-teal-600 text-white px-6 py-2 rounded-full hover:bg-teal-700 transition">Book Appointment</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-teal-800 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-4 py-4 space-y-2">
+            <a href="#home" class="block py-2 font-medium">Home</a>
+            <a href="#about" class="block py-2 font-medium">About</a>
+            <a href="#services" class="block py-2 font-medium">Services</a>
+            <a href="#blog" class="block py-2 font-medium">Blog</a>
+            <a href="#contact" class="block py-2 font-bold text-teal-600">Contact Us</a>
+        </div>
+    </nav>
+
+  <main class="pt-32">
+    {{ content }}
+  </main>
+
+  <footer class="bg-slate-950 py-12 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-teal-600 rounded flex items-center justify-center text-white">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <span class="font-bold text-lg text-white">Dr. Javad Masani</span>
+                </div>
+                
+                <div class="flex gap-8 text-slate-500 text-sm">
+                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition">Terms of Service</a>
+                    <a href="#" class="hover:text-white transition">Disclaimer</a>
+                </div>
+
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-teal-600 hover:text-white transition">
+                        <i class="fab fa-whatsapp text-lg"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-teal-600 hover:text-white transition">
+                        <i class="fab fa-facebook-f text-lg"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-teal-600 hover:text-white transition">
+                        <i class="fab fa-instagram text-lg"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-slate-900 text-center text-slate-600 text-xs">
+                &copy; 2024 Dr. Javad Masani Physiotherapy. All rights reserved. Developed for Bhavnagar Community.
+            </div>
+        </div>
+    </footer>
+
 
 </body>
 </html>
