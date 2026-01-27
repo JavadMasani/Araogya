@@ -52,3 +52,14 @@ collections:
       - label: "Content"
         name: "body"
         widget: "markdown"
+
+      - label: "SEO Title"
+        name: "seo_title"
+        widget: "string"
+        required: false
+
+      - label: "SEO Description"
+        name: "seo_description"
+        widget: "text"
+        required: false
+
