@@ -5,3 +5,9 @@ permalink: /:title.html
 description: Physiotherapy & Health Blogs
 timezone: Asia/Kolkata
 future: true
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+exclude:
+  - admin  
