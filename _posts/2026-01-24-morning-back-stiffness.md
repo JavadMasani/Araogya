@@ -1,6 +1,8 @@
 ---
 layout: post
-title: Morning Back Stiffness Kyun Hoti Hai?
+title: 🌅 સવારે ઉઠતી વખતે કમર કેમ જકડાઈ જાય છે? જાણો તેની પાછળનું વિજ્ઞાન અને
+  ગંભીર સંકેતો 🧘‍♂️
+slug: Morning Back Stiffness Kyun Hoti Hai?
 date: 2026-01-25T01:11:00.000+05:30
 thumbnail: /Araogya/assets/uploads/165058.jpg
 category: Back Pain
