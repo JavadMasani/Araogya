@@ -36,27 +36,42 @@
 </head>
 <body class="bg-white text-slate-800">
 
-<article class="py-24">
+<article class="py-24 bg-white">
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
 
     {% if page.thumbnail %}
       <img src="{{ page.thumbnail }}"
-           alt="{{ page.title }}"
-           class="w-full h-80 object-cover rounded-3xl mb-10">
+           class="w-full h-80 object-cover rounded-3xl mb-12">
     {% endif %}
 
-    <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4 font-gujarati">
+    <h1 class="text-3xl md:text-4xl font-bold text-slate-900
+               mb-6 leading-tight font-gujarati">
       {{ page.title }}
     </h1>
 
-    <p class="text-slate-500 text-sm mb-10">
+    <p class="text-slate-500 text-sm mb-12">
       {{ page.date | date: "%d %B %Y" }}
       {% if page.category %} · {{ page.category }}{% endif %}
     </p>
 
-    <div class="prose prose-slate max-w-none font-gujarati">
+    <div class="prose prose-slate prose-lg max-w-none
+                leading-relaxed font-gujarati">
       {{ content }}
     </div>
+
+    <!-- NAV -->
+    <div class="mt-16 flex justify-between border-t pt-6">
+      <a href="{{ site.baseurl }}/"
+         class="text-teal-600 font-bold">
+        ← Back to Home
+      </a>
+      <a href="{{ site.baseurl }}/blogs"
+         class="text-teal-600 font-bold">
+        View All Blogs →
+      </a>
+    </div>
+
+  </div>
 
     <!-- Share -->
     <div class="mt-14 pt-8 border-t flex gap-4">
