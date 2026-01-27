@@ -1,6 +1,6 @@
 ---
 layout: site
-title: આરોગ્ય માર્ગદર્શન
+title: Health Blogs
 ---
 
 <section class="py-24 bg-white">
@@ -18,8 +18,9 @@ title: આરોગ્ય માર્ગદર્શન
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
       {% for post in site.posts %}
-      <a href="{{ site.baseurl }}{{ post.url }}"
-         class="group block">
+
+      <!-- FULL CARD CLICKABLE -->
+      <a href="{{ site.baseurl }}{{ post.url }}" class="group block">
 
         <article
           class="bg-white border border-slate-100 rounded-3xl overflow-hidden
@@ -35,22 +36,25 @@ title: આરોગ્ય માર્ગદર્શન
           {% endif %}
 
           <div class="p-6">
-            <h3 class="text-xl font-bold mb-3 font-gujarati
-                       group-hover:text-teal-600">
+            <h3
+              class="text-xl font-bold mb-3 font-gujarati
+                     group-hover:text-teal-600">
               {{ post.title }}
             </h3>
 
-            <p class="text-slate-600 text-sm line-clamp-3 font-gujarati">
+            <p class="text-slate-600 text-sm leading-relaxed line-clamp-3 font-gujarati">
               {{ post.excerpt | strip_html | truncate: 140 }}
             </p>
 
-            <span class="mt-4 inline-block text-teal-600 font-bold text-sm uppercase">
+            <span
+              class="mt-4 inline-block text-teal-600 font-bold text-sm uppercase">
               Read More →
             </span>
           </div>
 
         </article>
       </a>
+
       {% endfor %}
 
     </div>
