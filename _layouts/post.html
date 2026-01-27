@@ -2,7 +2,27 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>{{ page.title }}</title>
+  <title>
+  {% if page.seo_title %}
+    {{ page.seo_title }}
+  {% else %}
+    {{ page.title }}
+  {% endif %}
+</title>
+
+<meta name="description" content="{{ page.seo_description | default: page.excerpt | strip_html | truncate: 160 }}">
+
+<meta property="og:title" content="{{ page.title }}">
+<meta property="og:description" content="{{ page.seo_description | default: page.excerpt | strip_html }}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+<meta property="og:image" content="{{ page.thumbnail }}">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page.title }}">
+<meta name="twitter:description" content="{{ page.seo_description | default: page.excerpt | strip_html }}">
+<meta name="twitter:image" content="{{ page.thumbnail }}">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css">
 </head>
