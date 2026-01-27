@@ -233,36 +233,61 @@
         </div>
     </section>
 
-    <!-- Blog Section -->
-    <section class="latest-blogs">
-  <h2>Latest Health Articles</h2>
+  
+  <!-- Blog Section -->
+<section id="blog" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-end mb-12">
+      <div>
+        <h2 class="text-3xl font-bold text-slate-900 mb-2">
+          Health Tips & Insights
+        </h2>
+        <p class="text-slate-500 font-gujarati">
+          સ્વસ્થ જીવન માટે ઉપયોગી માહિતી અને ટિપ્સ.
+        </p>
+      </div>
+      <a href="{{ site.baseurl }}/blogs"
+         class="hidden md:block text-teal-600 font-bold hover:underline">
+        View All Posts <i class="fas fa-arrow-right ml-2"></i>
+      </a>
+    </div>
 
-  <div class="blog-grid">
-    {% for post in site.posts limit:3 %}
-      <article class="blog-card">
-        <a href="{{ site.baseurl }}{{ post.url }}">
-          {% if post.thumbnail %}
-            <img src="{{ post.thumbnail }}">
-          {% endif %}
-          <div class="card-content">
-            <h2>{{ post.title }}</h2>
-            <p class="date">
-              {{ post.date | date: "%d %B %Y" }}
-            </p>
-          </div>
-        </a>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {% for post in site.posts limit:3 %}
+      <article
+        class="bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition">
+
+        {% if post.thumbnail %}
+        <img src="{{ post.thumbnail }}"
+             alt="{{ post.title }}"
+             class="h-48 w-full object-cover">
+        {% else %}
+        <div class="h-48 bg-slate-200 flex items-center justify-center text-slate-400">
+          <i class="fas fa-notes-medical text-5xl"></i>
+        </div>
+        {% endif %}
+
+        <div class="p-6">
+          <h3
+            class="text-xl font-bold mb-3 font-gujarati hover:text-teal-600 cursor-pointer">
+            {{ post.title }}
+          </h3>
+
+          <p class="text-slate-600 text-sm line-clamp-3 font-gujarati">
+            {{ post.excerpt | strip_html | truncate: 120 }}
+          </p>
+
+          <a href="{{ site.baseurl }}{{ post.url }}"
+             class="inline-block mt-4 text-teal-600 font-bold text-sm uppercase">
+            Read More →
+          </a>
+        </div>
       </article>
-    {% endfor %}
-  </div>
-
-  <div style="text-align:center; margin-top:30px;">
-    <a class="view-all" href="{{ site.baseurl }}/blogs">
-      View All Blogs →
-    </a>
+      {% endfor %}
+    </div>
   </div>
 </section>
 
-    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-slate-900 text-white overflow-hidden relative">
@@ -408,6 +433,7 @@
 </body>
 
 </html>
+
 
 
 
