@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Importance of Healthy Living
+title: "The Importance of Healthy Living "
 slug: importance-of-healthy-living
 date: 2026-01-27T23:44:00.000+05:30
 ---
