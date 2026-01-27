@@ -12,13 +12,17 @@ collections:
     label: "Blogs"
     folder: "_posts"
     create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Thumbnail Image", name: "thumbnail", widget: "image", required: false }
-      - { label: "Category", name: "category", widget: "string", required: false }
-      - { label: "Tags", name: "tags", widget: "list", required: false }
-      - { label: "Content", name: "body", widget: "markdown" }
+    slug: "{{year}}-{{month}}-{{day}}-{{fields.slug}}"
+  
+   fields:
+  - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+  - { label: "Title (Gujarati allowed)", name: "title", widget: "string" }
+  - { label: "Slug (English only)", name: "slug", widget: "string" }
+  - { label: "Publish Date", name: "date", widget: "datetime" }
+  - { label: "Thumbnail Image", name: "thumbnail", widget: "image", required: false }
+  - { label: "Category", name: "category", widget: "string", required: false }
+  - { label: "Tags", name: "tags", widget: "list", required: false }
+  - { label: "Content", name: "body", widget: "markdown" }
+
+
 
