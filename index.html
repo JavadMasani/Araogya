@@ -49,7 +49,7 @@
                         <a href="#home" class="nav-link font-medium">Home</a>
                         <a href="#about" class="nav-link font-medium">About</a>
                         <a href="#services" class="nav-link font-medium">Services</a>
-                        <a href="/Araogya/blogs">Blogs</a>
+                        <a href="/Araogya/blogs" class="nav-link font-medium">Blogs</a>
                         <a href="#contact" class="bg-teal-600 text-white px-6 py-2 rounded-full hover:bg-teal-700 transition">Book Appointment</a>
                     </div>
                 </div>
@@ -231,54 +231,34 @@
     </section>
 
     <!-- Blog Section -->
-    <section id="blog" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-end mb-12">
-                <div>
-                    <h2 class="text-3xl font-bold text-slate-900 mb-2">Health Tips & Insights</h2>
-                    <p class="text-slate-500">સ્વસ્થ જીવન માટે ઉપયોગી માહિતી અને ટિપ્સ.</p>
-                </div>
-                <a href="#" class="hidden md:block text-teal-600 font-bold hover:underline">View All Posts <i class="fas fa-arrow-right ml-2"></i></a>
-            </div>
+    <section id="blog" class="latest-blogs">
+  <h2>Latest Health Articles</h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Blog 1 -->
-                <article class="bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition">
-                    <div class="h-48 bg-slate-200 flex items-center justify-center text-slate-400">
-                        <i class="fas fa-procedures text-5xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 font-gujarati hover:text-teal-600 cursor-pointer">કમરના દુખાવાથી કેવી રીતે બચવું?</h3>
-                        <p class="text-slate-600 text-sm line-clamp-3 font-gujarati">આજના બેઠાડુ જીવનમાં કમરનો દુખાવો એક સામાન્ય સમસ્યા બની ગઈ છે. આ લેખમાં અમે તમને જણાવીશું કે કેવી રીતે યોગ્ય પોશ્ચર દ્વારા તમે બચી શકો છો...</p>
-                        <button class="mt-4 text-teal-600 font-bold text-sm uppercase">Read More</button>
-                    </div>
-                </article>
+  <div class="blog-grid">
+    {% for post in site.posts limit:3 %}
+      <article class="blog-card">
+        <a href="{{ site.baseurl }}{{ post.url }}">
+          {% if post.thumbnail %}
+            <img src="{{ post.thumbnail }}">
+          {% endif %}
+          <div class="card-content">
+            <h2>{{ post.title }}</h2>
+            <p class="date">
+              {{ post.date | date: "%d %B %Y" }}
+            </p>
+          </div>
+        </a>
+      </article>
+    {% endfor %}
+  </div>
 
-                <!-- Blog 2 -->
-                <article class="bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition">
-                    <div class="h-48 bg-teal-50 flex items-center justify-center text-teal-200">
-                        <i class="fas fa-hospital-user text-5xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 font-gujarati hover:text-teal-600 cursor-pointer">ઓપરેશન પછી ફિઝિયોથેરાપી કેમ જરૂરી છે?</h3>
-                        <p class="text-slate-600 text-sm line-clamp-3 font-gujarati">ઘણા લોકો માને છે કે સર્જરી પછી માત્ર આરામ જ પૂરતો છે, પરંતુ વાસ્તવમાં ફિઝિયોથેરાપી રિકવરી પ્રક્રિયાનો સૌથી મહત્વનો ભાગ છે...</p>
-                        <button class="mt-4 text-teal-600 font-bold text-sm uppercase">Read More</button>
-                    </div>
-                </article>
+  <div style="text-align:center; margin-top:30px;">
+    <a class="view-all" href="{{ site.baseurl }}/blogs">
+      View All Blogs →
+    </a>
+  </div>
+</section>
 
-                <!-- Blog 3 -->
-                <article class="bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition">
-                    <div class="h-48 bg-blue-50 flex items-center justify-center text-blue-200">
-                        <i class="fas fa-map-marker-alt text-5xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 font-gujarati hover:text-teal-600 cursor-pointer">હોમ વિઝિટ ફિઝિયોથેરાપીના ફાયદા</h3>
-                        <p class="text-slate-600 text-sm line-clamp-3 font-gujarati">હોમ વિઝિટ સેવાઓ દર્દીને તેમના ઘરના પરિચિત વાતાવરણમાં સારવાર લેવાની તક આપે છે. આનાથી મુસાફરીનો થાક બચે છે...</p>
-                        <button class="mt-4 text-teal-600 font-bold text-sm uppercase">Read More</button>
-                    </div>
-                </article>
-            </div>
-        </div>
     </section>
 
     <!-- Contact Section -->
@@ -425,5 +405,6 @@
 </body>
 
 </html>
+
 
 
