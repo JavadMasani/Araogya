@@ -3,3 +3,5 @@ baseurl: "/Araogya"
 
 permalink: /:title.html
 description: Physiotherapy & Health Blogs
+timezone: Asia/Kolkata
+future: true
