@@ -3,7 +3,7 @@ layout: post
 title: Morning Back Stiffness Kyun Hoti Hai?
 slug: morning-back-stiffness
 date: 2026-01-25T01:11:00.000+05:30
-thumbnail: /Araogya/assets/uploads/165058.jpg
+thumbnail: /Araogya/assets/uploads/165059.jpg
 category: Back Pain
 tags:
   - Back
