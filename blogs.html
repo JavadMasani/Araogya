@@ -1,3 +1,20 @@
-<a href="/Araogya/morning-back-stiffness.html">
-Morning Back Stiffness Kyun Hoti Hai?
-</a>
+---
+layout: default
+title: Blogs
+---
+
+<div class="blog-grid">
+  {% for post in site.posts %}
+    <a class="card" href="{{ site.baseurl }}{{ post.url }}">
+      {% if post.thumbnail %}
+        <img src="{{ post.thumbnail }}" alt="{{ post.title }}">
+      {% endif %}
+      <div class="card-body">
+        <h3>{{ post.title }}</h3>
+        {% if post.category %}
+          <span>{{ post.category }}</span>
+        {% endif %}
+      </div>
+    </a>
+  {% endfor %}
+</div>
