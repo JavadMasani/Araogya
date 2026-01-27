@@ -1,21 +1,30 @@
 ---
 layout: default
-title: Blogs
+title: Health Blogs by Dr. Javad Masani
 ---
 
-<h1>Blogs</h1>
+<h1 class="page-title">આરોગ્ય માર્ગદર્શન</h1>
 
-<ul>
+<div class="blog-grid">
   {% for post in site.posts %}
-    <li style="margin-bottom:20px;">
+    <article class="blog-card">
       <a href="{{ site.baseurl }}{{ post.url }}">
-        <strong>{{ post.title }}</strong>
+        {% if post.thumbnail %}
+          <img src="{{ post.thumbnail }}" alt="{{ post.title }}">
+        {% endif %}
+
+        <div class="card-content">
+          <h2>{{ post.title }}</h2>
+
+          {% if post.category %}
+            <span class="category">{{ post.category }}</span>
+          {% endif %}
+
+          <p class="date">
+            {{ post.date | date: "%d %B %Y" }}
+          </p>
+        </div>
       </a>
-      <br>
-      <small>
-        {{ post.date | date: "%d %B %Y" }}
-        {% if post.category %} · {{ post.category }}{% endif %}
-      </small>
-    </li>
+    </article>
   {% endfor %}
-</ul>
+</div>
