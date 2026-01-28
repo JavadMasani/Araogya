@@ -3,7 +3,7 @@ layout: site
 title: Health Blogs
 ---
 
-<section class="py-24 bg-white">
+<section class="pb-24 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
     <div class="mb-14 text-center">
