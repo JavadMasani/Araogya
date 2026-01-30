@@ -39,8 +39,7 @@ title: Patient Reviews
 
     </div>
   </div>
-</section>
-<div class="text-center mt-10">
+  <div class="text-center mt-10">
   <a href="{{ site.baseurl }}/review"
      class="inline-flex items-center gap-2
             bg-teal-600 text-white
@@ -50,3 +49,5 @@ title: Patient Reviews
     Give Your Review
   </a>
 </div>
+</section>
+
