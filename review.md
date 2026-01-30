@@ -16,10 +16,7 @@ title: Patient Review
     </div>
 
 <div class="w-full rounded-2xl overflow-hidden shadow-sm">
-    <iframe
-      src="https://docs.google.com/forms/d/e/1FAIpQLSdk4WaR5E_u39NusblQ-SAyZF7v-mJMicB5AJkJKUIjZLvQ9g/viewform?usp=header"
-      class="w-full h-[900px] border-0">
-    </iframe>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdk4WaR5E_u39NusblQ-SAyZF7v-mJMicB5AJkJKUIjZLvQ9g/viewform?embedded=true" width="640" height="1044" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 </div>
   </div>
 </section>
