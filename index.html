@@ -529,8 +529,10 @@
     <!-- Reviews Cards -->
     <div class="overflow-x-auto flex gap-6 snap-x snap-mandatory pb-4">
 
-  {% assign approved_reviews = site.reviews | where: "status", "approved" %}
-  {% for review in approved_reviews limit:8 %}
+  {% assign r = review.rating | plus: 0 %}
+  <div class="text-yellow-400 mb-1">
+    {% for i in (1..r) %}★{% endfor %}
+  </div>
 
   <div class="min-w-[300px] max-w-[300px] snap-center
               bg-white p-6 rounded-3xl border border-slate-100 shadow-sm">
@@ -739,6 +741,7 @@
 </body>
 
 </html>
+
 
 
 
