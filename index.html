@@ -527,28 +527,32 @@
     </div>
 
     <!-- Reviews Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="overflow-x-auto flex gap-6 snap-x snap-mandatory pb-4">
 
-      {% assign approved_reviews = site.reviews | where: "status", "approved" %}
-      {% for review in approved_reviews limit:3 %}
+  {% assign approved_reviews = site.reviews | where: "status", "approved" %}
+  {% for review in approved_reviews limit:8 %}
 
-      <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition">
-        <p class="text-slate-700 font-gujarati mb-6 leading-relaxed">
-          “{{ review.content | strip_html }}”
-        </p>
+  <div class="min-w-[300px] max-w-[300px] snap-center
+              bg-white p-6 rounded-3xl border border-slate-100 shadow-sm">
 
-        <div class="flex justify-between items-center">
-          <span class="font-bold text-slate-900">
-            {{ review.name | default: "Patient" }}
-          </span>
-          <span class="text-yellow-400 tracking-wide">
-            {{ review.rating }}
-          </span>
-        </div>
-      </div>
+    <p class="text-slate-700 font-gujarati mb-5 leading-relaxed">
+      “{{ review.content | strip_html }}”
+    </p>
 
-      {% endfor %}
+    <div class="flex justify-between items-center">
+      <span class="font-bold text-slate-900">
+        {{ review.name | default: "Patient" }}
+      </span>
+      <span class="text-yellow-400 tracking-wide">
+        {{ review.rating }}
+      </span>
     </div>
+
+  </div>
+
+  {% endfor %}
+</div>
+
 
     <!-- View All -->
     <div class="text-center mt-12">
@@ -706,6 +710,7 @@
 </body>
 
 </html>
+
 
 
 
