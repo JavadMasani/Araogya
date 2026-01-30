@@ -68,7 +68,7 @@ collections:
     folder: "_reviews"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    summary: "{{name}} — {{rating}}"
+    summary: "{{name}} — {{rating}}★"
 
     fields:
     - { label: "Patient Name", name: "name", widget: "string" }
