@@ -3,20 +3,33 @@ layout: site
 title: Patient Review
 ---
 
-<section class="py-24 bg-white">
-  <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="py-20 bg-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
     <div class="text-center mb-10">
-      <h1 class="text-3xl font-bold text-slate-900 mb-2">
+      <h1 class="text-3xl font-bold text-slate-900 mb-2 font-gujarati">
         તમારો અનુભવ શેર કરો
       </h1>
       <p class="text-slate-500 font-gujarati">
-        તમારો પ્રતિભાવ અન્ય દર્દીઓને મદદ કરશે
+        તમારો સાચો પ્રતિભાવ અન્ય દર્દીઓને મદદ કરશે
       </p>
     </div>
 
-<div class="w-full rounded-2xl overflow-hidden shadow-sm">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdk4WaR5E_u39NusblQ-SAyZF7v-mJMicB5AJkJKUIjZLvQ9g/viewform?embedded=true" width="440" height="1244" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-</div>
+    <!-- FORM WRAPPER -->
+    <div class="w-full rounded-2xl overflow-hidden border border-slate-200">
+
+      <iframe
+        src="[PASTE_GOOGLE_FORM_EMBED_LINK](https://forms.gle/ogH9baahGopgNKMHA)"
+        class="w-full border-0"
+        style="height: 1200px;"
+        loading="lazy">
+      </iframe>
+
+    </div>
+
+    <p class="text-center text-sm text-slate-500 mt-6 font-gujarati">
+      રિવ્યુ સબમિટ કર્યા પછી, ડૉક્ટર દ્વારા ચકાસણી બાદ વેબસાઇટ પર દર્શાવવામાં આવશે.
+    </p>
+
   </div>
 </section>
