@@ -19,7 +19,7 @@ title: Patient Review
     <div class="w-full rounded-2xl overflow-hidden border border-slate-200">
 
       <iframe
-        src="[PASTE_GOOGLE_FORM_EMBED_LINK](https://forms.gle/ogH9baahGopgNKMHA)"
+        src="https://forms.gle/ogH9baahGopgNKMHA"
         class="w-full border-0"
         style="height: 1200px;"
         loading="lazy">
