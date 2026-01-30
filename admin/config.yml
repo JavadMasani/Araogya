@@ -63,3 +63,15 @@ collections:
         widget: "text"
         required: false
 
+- name: "reviews"
+  label: "Patient Reviews"
+  folder: "_reviews"
+  create: true
+  slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+  fields:
+    - { label: "Patient Name", name: "name", widget: "string", required: false }
+    - { label: "Rating", name: "rating", widget: "select", options: ["★★★★★","★★★★☆","★★★☆☆"], default: "★★★★★" }
+    - { label: "Review", name: "body", widget: "text" }
+    - { label: "Status", name: "status", widget: "select", options: ["pending","approved"], default: "pending" }
+
+
