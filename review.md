@@ -67,10 +67,17 @@ form.addEventListener("submit", async function(e) {
     review: form.review.value
   };
 
-  const res = await fetch("https://script.google.com/macros/s/AKfycbwgmeUkqpR806s4cQz3IAqh1G1baovJM1u0XRuC7rbrND5OwqGIudXX5BUo7ELhBR9gYA/exec", {
+  const res = await fetch(
+  "https://script.google.com/macros/s/AKfycbwgmeUkqpR806s4cQz3IAqh1G1baovJM1u0XRuC7rbrND5OwqGIudXX5BUo7ELhBR9gYA/exec",
+  {
     method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
     body: JSON.stringify(data)
-  });
+  }
+);
+
 
   if (res.ok) {
     form.reset();
