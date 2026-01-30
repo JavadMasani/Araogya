@@ -98,7 +98,7 @@ stars.forEach((star, index) => {
     stars.forEach((s, i) => {
       s.textContent = i <= index ? "★" : "☆";
     });
-    ratingInput.value = "★★★★★".slice(0, index + 1);
+    ratingInput.value = index + 1;
   });
 });
 
