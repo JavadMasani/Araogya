@@ -3,7 +3,7 @@ layout: site
 title: Patient Review
 ---
 
-<section class="pt-32 pb-20 bg-white">
+<section class="pb-20 bg-white -mt-24">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
     <div class="text-center mb-8">
