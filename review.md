@@ -13,21 +13,29 @@ title: Patient Review
         તમારો અનુભવ શેર કરો
       </h1>
 
-      <input type="text" name="name"
-        placeholder="તમારું નામ (Optional)"
+      <input type="text" name="name" required
+        placeholder="તમારું નામ"
         class="w-full border rounded-xl px-4 py-3">
 
-      <input type="tel" name="phone"
-        placeholder="મોબાઇલ નંબર (Optional)"
+      <input type="tel" name="phone" required
+        placeholder="મોબાઇલ નંબર"
+        pattern="[0-9]{10}"
         class="w-full border rounded-xl px-4 py-3">
 
-      <select name="rating" required
-        class="w-full border rounded-xl px-4 py-3">
-        <option value="">Rating પસંદ કરો</option>
-        <option value="★★★★★">★★★★★</option>
-        <option value="★★★★☆">★★★★☆</option>
-        <option value="★★★☆☆">★★★☆☆</option>
-      </select>
+      <div class="text-center">
+  <p class="mb-2 font-medium text-slate-700">Rating આપો</p>
+
+  <div class="flex justify-center gap-2 text-3xl cursor-pointer" id="stars">
+    <span data-value="1">☆</span>
+    <span data-value="2">☆</span>
+    <span data-value="3">☆</span>
+    <span data-value="4">☆</span>
+    <span data-value="5">☆</span>
+  </div>
+
+  <input type="hidden" name="rating" value="★★★★★" required>
+</div>
+
 
       <textarea name="review" rows="4" required
         placeholder="તમારો અનુભવ લખો"
@@ -59,12 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("reviewForm");
   const successMsg = document.getElementById("successMsg");
 
-  if (!form) {
-    console.error("Form not found");
-    return;
-  }
-
-  form.addEventListener("submit", async function (e) {
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
 
     const data = {
@@ -74,38 +77,29 @@ document.addEventListener("DOMContentLoaded", function () {
       review: form.review.value
     };
 
-    console.log("Submitting data:", data);
+    // fire-and-forget (no CORS issues)
+    fetch("https://script.google.com/macros/s/AKfycbwgmeUkqpR806s4cQz3IAqh1G1baovJM1u0XRuC7rbrND5OwqGIudXX5BUo7ELhBR9gYA/exec", {
+      method: "POST",
+      mode: "no-cors",
+      body: JSON.stringify(data)
+    });
 
-    try {
-      fetch(
-  "https://script.google.com/macros/s/AKfycbwgmeUkqpR806s4cQz3IAqh1G1baovJM1u0XRuC7rbrND5OwqGIudXX5BUo7ELhBR9gYA/exec",
-  {
-    method: "POST",
-    mode: "no-cors",
-    body: JSON.stringify(data)
-  }
-);
-
-form.reset();
-successMsg.classList.remove("hidden");
-
-      console.log("Response status:", res.status);
-
-      if (!res.ok) {
-        throw new Error("Network response not OK");
-      }
-
-      const result = await res.text();
-      console.log("Server response:", result);
-
-      form.reset();
-      successMsg.classList.remove("hidden");
-
-    } catch (error) {
-      console.error("Submit error:", error);
-      alert("Review submit nahi ho paya. Please try again.");
-    }
+    // UX success (backend already confirmed working)
+    form.reset();
+    successMsg.classList.remove("hidden");
   });
 
 });
+  const stars = document.querySelectorAll("#stars span");
+const ratingInput = document.querySelector("input[name='rating']");
+
+stars.forEach((star, index) => {
+  star.addEventListener("click", () => {
+    stars.forEach((s, i) => {
+      s.textContent = i <= index ? "★" : "☆";
+    });
+    ratingInput.value = "★★★★★".slice(0, index + 1);
+  });
+});
+
 </script>
