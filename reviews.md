@@ -40,3 +40,13 @@ title: Patient Reviews
     </div>
   </div>
 </section>
+<div class="text-center mt-10">
+  <a href="{{ site.baseurl }}/review"
+     class="inline-flex items-center gap-2
+            bg-teal-600 text-white
+            px-6 py-3 rounded-xl font-bold
+            hover:bg-teal-700 transition">
+    <i class="fas fa-star"></i>
+    Give Your Review
+  </a>
+</div>
