@@ -15,10 +15,11 @@ title: Patient Review
       </p>
     </div>
 
+<div class="w-full rounded-2xl overflow-hidden shadow-sm">
     <iframe
       src="[https://forms.gle/RJX5BfisQekMxvJE7](https://forms.gle/kxeMoqxDiw2HFVNi7)"
-      class="w-full h-[600px] border-0 rounded-xl">
+      class="w-full h-[900px] border-0">
     </iframe>
-
+</div>
   </div>
 </section>
