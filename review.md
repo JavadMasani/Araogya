@@ -17,7 +17,7 @@ title: Patient Review
 
 <div class="w-full rounded-2xl overflow-hidden shadow-sm">
     <iframe
-      src="[https://forms.gle/FgfQdc64Fjb8V2gQ8](https://forms.gle/6HCoNh6qcgCqCykH9)"
+      src="https://docs.google.com/forms/d/e/1FAIpQLSdk4WaR5E_u39NusblQ-SAyZF7v-mJMicB5AJkJKUIjZLvQ9g/viewform?usp=header"
       class="w-full h-[900px] border-0">
     </iframe>
 </div>
