@@ -1,7 +1,7 @@
 ---
-name: "Masani Javad"
-rating: "?????"
-status: "pending"
+name: Masani Javad
+rating: ★★★★★
+status: approved
 ---
 
 Khuba j saras Dr
