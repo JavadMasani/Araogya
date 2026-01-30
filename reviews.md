@@ -29,7 +29,10 @@ title: Patient Reviews
             {{ review.name | default: "Patient" }}
           </span>
           <span class="text-yellow-400">
-            {{ review.rating }}
+            {% assign r = review.rating | plus: 0 %}
+<span class="text-yellow-400 text-lg">
+  {% for i in (1..r) %}★{% endfor %}
+</span>
           </span>
         </div>
       </div>
