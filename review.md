@@ -16,7 +16,7 @@ title: Patient Review
     </div>
 
     <iframe
-      src="PASTE_GOOGLE_FORM_EMBED_LINK"
+      src="https://forms.gle/RJX5BfisQekMxvJE7"
       class="w-full h-[600px] border-0 rounded-xl">
     </iframe>
 
