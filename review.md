@@ -21,7 +21,7 @@ title: Patient Review
       <iframe
         src="https://forms.gle/ogH9baahGopgNKMHA"
         class="w-full border-0"
-        style="height: 1200px;"
+        style="height: max;"
         loading="lazy">
       </iframe>
 
