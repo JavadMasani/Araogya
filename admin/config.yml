@@ -68,6 +68,8 @@ collections:
     folder: "_reviews"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{name}} — {{rating}}"
+
     fields:
     - { label: "Patient Name", name: "name", widget: "string" }
     - { label: "Mobile Number", name: "phone", widget: "string", required: false }
