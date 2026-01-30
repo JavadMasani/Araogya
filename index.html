@@ -529,9 +529,11 @@
     <!-- Reviews Cards -->
     <div class="overflow-x-auto flex gap-6 snap-x snap-mandatory pb-4">
 
-  {% assign r = review.rating | plus: 0 %}
-  <div class="text-yellow-400 mb-1">
-    {% for i in (1..r) %}★{% endfor %}
+  <span class="text-yellow-400">
+            {% assign r = review.rating | plus: 0 %}
+<span class="text-yellow-400 text-lg">
+  {% for i in (1..r) %}★{% endfor %}
+</span>
   </div>
 
   <div class="min-w-[300px] max-w-[300px] snap-center
@@ -741,6 +743,7 @@
 </body>
 
 </html>
+
 
 
 
