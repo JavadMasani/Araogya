@@ -717,9 +717,28 @@
             });
         });
     </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Physician",
+  "name": "Dr. Javad Masani",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bhavnagar",
+    "addressCountry": "IN"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "{{ site.reviews | where: 'status','approved' | size }}"
+  }
+}
+</script>
+
 </body>
 
 </html>
+
 
 
 
