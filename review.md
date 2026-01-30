@@ -11,13 +11,14 @@ title: Patient Review
         તમારો અનુભવ શેર કરો
       </h1>
       <p class="text-slate-500 font-gujarati">
-        તમારો સાચો પ્રતિભાવ અન્ય દર્દીઓને યોગ્ય નિર્ણય લેવામાં મદદ કરશે
+        તમારો પ્રતિભાવ અન્ય દર્દીઓને મદદ કરશે
       </p>
     </div>
 
-    <p class="text-center text-slate-600 font-gujarati">
-      કૃપા કરીને રિવ્યુ આપવા માટે ડૉક્ટર અથવા સ્ટાફને જાણ કરો.
-    </p>
+    <iframe
+      src="PASTE_GOOGLE_FORM_EMBED_LINK"
+      class="w-full h-[600px] border-0 rounded-xl">
+    </iframe>
 
   </div>
 </section>
