@@ -54,34 +54,57 @@ title: Patient Review
 </section>
 
 <script>
-const form = document.getElementById("reviewForm");
-const successMsg = document.getElementById("successMsg");
+document.addEventListener("DOMContentLoaded", function () {
 
-form.addEventListener("submit", async function(e) {
-  e.preventDefault();
+  const form = document.getElementById("reviewForm");
+  const successMsg = document.getElementById("successMsg");
 
-  const data = {
-    name: form.name.value,
-    phone: form.phone.value,
-    rating: form.rating.value,
-    review: form.review.value
-  };
-
-  const res = await fetch(
-  "https://script.google.com/macros/s/AKfycbwgmeUkqpR806s4cQz3IAqh1G1baovJM1u0XRuC7rbrND5OwqGIudXX5BUo7ELhBR9gYA/exec",
-  {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(data)
+  if (!form) {
+    console.error("Form not found");
+    return;
   }
-);
 
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-  if (res.ok) {
-    form.reset();
-    successMsg.classList.remove("hidden");
-  }
+    const data = {
+      name: form.name.value,
+      phone: form.phone.value,
+      rating: form.rating.value,
+      review: form.review.value
+    };
+
+    console.log("Submitting data:", data);
+
+    try {
+      const res = await fetch(
+        "https://script.google.com/macros/s/AKfycbwgmeUkqpR806s4cQz3IAqh1G1baovJM1u0XRuC7rbrND5OwqGIudXX5BUo7ELhBR9gYA/exec",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        }
+      );
+
+      console.log("Response status:", res.status);
+
+      if (!res.ok) {
+        throw new Error("Network response not OK");
+      }
+
+      const result = await res.text();
+      console.log("Server response:", result);
+
+      form.reset();
+      successMsg.classList.remove("hidden");
+
+    } catch (error) {
+      console.error("Submit error:", error);
+      alert("Review submit nahi ho paya. Please try again.");
+    }
+  });
+
 });
 </script>
