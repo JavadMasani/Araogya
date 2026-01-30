@@ -3,17 +3,8 @@ layout: site
 title: Patient Review
 ---
 
-<section class="pb-24 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-    <div class="mb-14 text-center">
-      <h1 class="text-3xl font-bold text-slate-900 mb-2 font-gujarati">
-        તમારો અનુભવ શેર કરો
-      </h1>
-      <p class="text-slate-500 font-gujarati">
-        તમારો સાચો પ્રતિભાવ અન્ય દર્દીઓને મદદ કરશે
-      </p>
-    </div>
+<section class="pb-20 bg-white -mt-24">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
     <!-- FORM WRAPPER -->
     <div class="w-full rounded-2xl overflow-hidden border border-slate-200">
