@@ -17,8 +17,8 @@ title: Patient Reviews
 
     <div class="space-y-8">
 
-      {% for review in site.reviews %}
-      {% if review.status == "approved" %}
+      {% assign approved_reviews = site.reviews | where: "status", "approved" %}
+{% for review in approved_reviews %}
 
       <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
         <p class="text-slate-700 font-gujarati mb-4">
