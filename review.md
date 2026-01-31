@@ -33,7 +33,7 @@ title: Patient Review
     <span data-value="5">☆</span>
   </div>
 
-  <input type="hidden" name="rating" value="★★★★★" required>
+  <input type="hidden" name="rating" value="5" required>
 </div>
 
 
@@ -51,10 +51,28 @@ title: Patient Review
         Submit Review
       </button>
 
-      <p id="successMsg"
-         class="hidden text-green-600 text-center font-bold">
-        તમારો રિવ્યુ સફળતાપૂર્વક મોકલાયો છે 🙏
-      </p>
+      <div id="successMsg"
+     class="hidden mt-6 p-4 bg-green-50 rounded-xl text-center">
+
+  <p class="text-green-700 font-bold mb-3 font-gujarati">
+    🙏 તમારો પ્રતિભાવ આપવા બદલ ખૂબ આભાર!
+  </p>
+
+  <p class="text-slate-600 text-sm mb-4 font-gujarati">
+    જો તમે માત્ર 30 સેકન્ડ કાઢીને Google પર પણ રિવ્યુ આપશો,
+    તો તે અન્ય દર્દીઓને યોગ્ય નિર્ણય લેવા માટે ખૂબ મદદરૂપ થશે.
+  </p>
+
+  <a href="https://g.page/r/Caxb3m1VHzFbEAE/review"
+     target="_blank"
+     class="inline-block bg-blue-600 text-white
+            px-6 py-3 rounded-lg font-bold
+            hover:bg-blue-700 transition">
+    ⭐ Google પર રિવ્યુ આપો
+  </a>
+
+</div>
+
 
     </form>
 
