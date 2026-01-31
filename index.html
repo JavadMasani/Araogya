@@ -509,6 +509,7 @@
   </div>
 </section>
 <!-- Patient Reviews Section -->
+<!-- Patient Reviews Section -->
 <section class="py-20 bg-slate-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -526,38 +527,34 @@
       </p>
     </div>
 
-    <!-- Reviews Cards -->
+    {% assign approved_reviews = site.reviews | where: "status", "approved" %}
+
+    <!-- Reviews Horizontal Scroll -->
     <div class="overflow-x-auto flex gap-6 snap-x snap-mandatory pb-4">
 
-  <span class="text-yellow-400">
-           {% assign approved_reviews = site.reviews | where: "status", "approved" %}
-{% for review in approved_reviews %}
-<span class="text-yellow-400 text-lg">
-  {% for i in (1..r) %}★{% endfor %}
-</span>
-  </div>
+      {% for review in approved_reviews %}
 
-  <div class="min-w-[300px] max-w-[300px] snap-center
-              bg-white p-6 rounded-3xl border border-slate-100 shadow-sm">
+      <div class="min-w-[300px] max-w-[300px] snap-center
+                  bg-white p-6 rounded-3xl border border-slate-100 shadow-sm">
 
-    <p class="text-slate-700 font-gujarati mb-5 leading-relaxed">
-      “{{ review.content | strip_html }}”
-    </p>
+        {% assign r = review.rating | plus: 0 %}
+        <div class="text-yellow-400 text-lg mb-3 tracking-wide">
+          {% for i in (1..r) %}★{% endfor %}
+        </div>
 
-    <div class="flex justify-between items-center">
-      <span class="font-bold text-slate-900">
-        {{ review.name | default: "Patient" }}
-      </span>
-      <span class="text-yellow-400 tracking-wide">
-        {{ review.rating }}
-      </span>
+        <p class="text-slate-700 font-gujarati mb-5 leading-relaxed">
+          “{{ review.content | strip_html }}”
+        </p>
+
+        <p class="font-bold text-slate-900">
+          {{ review.name | default: "Patient" }}
+        </p>
+
+      </div>
+
+      {% endfor %}
+
     </div>
-
-  </div>
-
-  {% endfor %}
-</div>
-
 
     <!-- View All -->
     <div class="text-center mt-12">
@@ -566,19 +563,22 @@
         બધા પ્રતિભાવો જુઓ →
       </a>
     </div>
-      <div class="text-center mt-10">
-  <a href="{{ site.baseurl }}/review"
-     class="inline-flex items-center gap-2
-            bg-teal-600 text-white
-            px-6 py-3 rounded-xl font-bold
-            hover:bg-teal-700 transition">
-    <i class="fas fa-star"></i>
-    Give Your Review
-  </a>
-</div>
+
+    <!-- Give Review -->
+    <div class="text-center mt-10">
+      <a href="{{ site.baseurl }}/review"
+         class="inline-flex items-center gap-2
+                bg-teal-600 text-white
+                px-6 py-3 rounded-xl font-bold
+                hover:bg-teal-700 transition">
+        <i class="fas fa-star"></i>
+        Give Your Review
+      </a>
+    </div>
 
   </div>
 </section>
+
 
 
 
@@ -744,6 +744,7 @@
 </body>
 
 </html>
+
 
 
 
