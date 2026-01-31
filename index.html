@@ -538,11 +538,11 @@
     {% assign i = 0 %}
     {% for review in approved_reviews %}
       {% if i == 0 or i | modulo: 3 == 0 %}
-      <div class="w-full px-4">
+      <div class="w-full px-4 review-slide">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       {% endif %}
 
-      <div class="bg-white p-6 rounded-3xl shadow-sm text-center">
+      <div class="bg-white p-6 rounded-3xl shadow-sm text-center w-full">
         {% assign r = review.rating | plus: 0 %}
         <div class="text-yellow-400 text-lg mb-3">
           {% for s in (1..r) %}★{% endfor %}
@@ -776,7 +776,7 @@ const slider = document.getElementById("reviewSlider");
 const dots = document.getElementById("reviewDots");
 
 if (slider && dots) {
-  const slides = slider.children;
+  cconst slides = slider.querySelectorAll(".review-slide");
   let current = 0;
   let auto;
 
@@ -826,6 +826,7 @@ if (slider && dots) {
 </body>
 
 </html>
+
 
 
 
