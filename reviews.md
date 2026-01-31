@@ -3,10 +3,10 @@ layout: site
 title: Patient Reviews
 ---
 
-<section class="py-24 bg-white">
+<section class="pb-20 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <div class="text-center mb-14">
+    <div class="text-center mb-12 mt-8">
       <h1 class="text-4xl font-bold text-slate-900 mb-3">
         દર્દીઓના પ્રતિભાવો
       </h1>
