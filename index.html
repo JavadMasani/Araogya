@@ -783,7 +783,7 @@ if (slider && dots) {
   let current = 0;
   let auto;
 
-  // Build dots (per slide)
+  // Build dots
   for (let i = 0; i < slides.length; i++) {
     const dot = document.createElement("button");
     dot.className = "w-3 h-3 rounded-full bg-slate-300";
@@ -799,7 +799,9 @@ if (slider && dots) {
   }
 
   function update() {
-    slider.style.transform = `translateX(-${current * 100}%)`;
+    const slideWidth = slides[0].offsetWidth;
+    slider.style.transform = `translateX(-${current * slideWidth}px)`;
+
     [...dots.children].forEach((d, i) => {
       d.classList.toggle("bg-teal-600", i === current);
       d.classList.toggle("bg-slate-300", i !== current);
@@ -818,9 +820,10 @@ if (slider && dots) {
     startAuto();
   }
 
-  // Pause on hover
   slider.addEventListener("mouseenter", () => clearInterval(auto));
   slider.addEventListener("mouseleave", startAuto);
+
+  window.addEventListener("resize", update);
 
   startAuto();
 }
@@ -830,6 +833,7 @@ if (slider && dots) {
 </body>
 
 </html>
+
 
 
 
