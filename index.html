@@ -530,7 +530,8 @@
     <div class="overflow-x-auto flex gap-6 snap-x snap-mandatory pb-4">
 
   <span class="text-yellow-400">
-            {% assign r = review.rating | plus: 0 %}
+           {% assign approved_reviews = site.reviews | where: "status", "approved" %}
+{% for review in approved_reviews %}
 <span class="text-yellow-400 text-lg">
   {% for i in (1..r) %}★{% endfor %}
 </span>
@@ -743,6 +744,7 @@
 </body>
 
 </html>
+
 
 
 
