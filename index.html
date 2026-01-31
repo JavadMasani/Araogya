@@ -529,47 +529,51 @@
 
     {% assign approved_reviews = site.reviews | where: "status", "approved" %}
 
-    <div class="relative overflow-hidden">
+<div class="relative overflow-hidden">
 
-      <!-- SLIDER -->
-      <!-- SLIDES -->
-      <div id="reviewSlider"
-           class="flex transition-transform duration-700 ease-in-out">
+  <!-- SLIDER -->
+  <div id="reviewSlider"
+       class="flex transition-transform duration-700 ease-in-out">
 
-        {% assign i = 0 %}
-        {% for review in approved %}
-          {% if i == 0 or i modulo 3 == 0 %}
-          <div class="min-w-full px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {% endif %}
+    {% assign i = 0 %}
+    {% for review in approved_reviews %}
 
-          <div class="bg-white p-6 rounded-3xl shadow-sm text-center">
-            {% assign r = review.rating | plus: 0 %}
-            <div class="text-yellow-400 text-lg mb-3">
-              {% for s in (1..r) %}★{% endfor %}
-            </div>
-            <p class="text-slate-700 font-gujarati mb-4">
-              “{{ review.content | strip_html | truncate: 160 }}”
-            </p>
-            <p class="font-bold text-slate-900">
-              {{ review.name | default: "Patient" }}
-            </p>
-          </div>
+      {% if i == 0 or i | modulo: 3 == 0 %}
+      <div class="min-w-full px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {% endif %}
 
-          {% assign i = i | plus: 1 %}
-          {% if i modulo 3 == 0 or forloop.last %}
-            </div>
-          </div>
-          {% endif %}
-        {% endfor %}
+      <div class="bg-white p-6 rounded-3xl shadow-sm text-center">
+        {% assign r = review.rating | plus: 0 %}
+        <div class="text-yellow-400 text-lg mb-3">
+          {% for s in (1..r) %}★{% endfor %}
+        </div>
 
+        <p class="text-slate-700 font-gujarati mb-4">
+          “{{ review.content | strip_html | truncate: 160 }}”
+        </p>
+
+        <p class="font-bold text-slate-900">
+          {{ review.name | default: "Patient" }}
+        </p>
       </div>
 
-      <!-- DOTS -->
-      <div id="reviewDots"
-           class="flex justify-center gap-2 mt-6"></div>
+      {% assign i = i | plus: 1 %}
 
-    </div>
+      {% if i | modulo: 3 == 0 or forloop.last %}
+        </div>
+      </div>
+      {% endif %}
+
+    {% endfor %}
+
+  </div>
+
+  <!-- DOTS -->
+  <div id="reviewDots" class="flex justify-center gap-2 mt-6"></div>
+
+</div>
+
 
 
     <!-- View All -->
@@ -826,6 +830,7 @@ if (slider && dots) {
 </body>
 
 </html>
+
 
 
 
