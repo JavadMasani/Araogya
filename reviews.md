@@ -4,10 +4,10 @@ title: Patient Reviews
 ---
 
 <section class="py-24 bg-white">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
     <div class="text-center mb-14">
-      <h1 class="text-4xl font-bold text-slate-900 mb-2">
+      <h1 class="text-4xl font-bold text-slate-900 mb-3">
         દર્દીઓના પ્રતિભાવો
       </h1>
       <p class="text-slate-500 font-gujarati">
