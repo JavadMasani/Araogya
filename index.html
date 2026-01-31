@@ -17,6 +17,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
+        .review-scroll::-webkit-scrollbar {
+  display: none;
+}
+.review-scroll {
+  -ms-overflow-style: none;  /* IE/Edge */
+  scrollbar-width: none;     /* Firefox */
+}
         body {
             font-family: 'Poppins', 'Noto Sans Gujarati', sans-serif;
             scroll-behavior: smooth;
@@ -530,8 +537,9 @@
     {% assign approved_reviews = site.reviews | where: "status", "approved" %}
 
     <!-- SCROLL AREA -->
-    <div id="reviewTrack"
-         class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-6">
+   <div id="reviewTrack"
+     class="review-scroll flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-6">
+
 
       {% for review in approved_reviews %}
 
@@ -797,6 +805,7 @@ if (track && dots) {
 </body>
 
 </html>
+
 
 
 
