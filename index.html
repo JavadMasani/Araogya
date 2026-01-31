@@ -529,32 +529,41 @@
 
     {% assign approved_reviews = site.reviews | where: "status", "approved" %}
 
-    <!-- Reviews Horizontal Scroll -->
-    <div class="overflow-x-auto flex gap-6 snap-x snap-mandatory pb-4">
+    <div class="relative overflow-hidden">
 
-      {% for review in approved_reviews %}
+      <!-- SLIDER -->
+      <div id="reviewSlider"
+           class="flex transition-transform duration-700 ease-in-out">
 
-      <div class="min-w-[300px] max-w-[300px] snap-center
-                  bg-white p-6 rounded-3xl border border-slate-100 shadow-sm">
+        {% for review in approved_reviews limit:6 %}
+        <div class="min-w-full px-4">
+          <div class="bg-white p-8 rounded-3xl shadow-sm text-center">
 
-        {% assign r = review.rating | plus: 0 %}
-        <div class="text-yellow-400 text-lg mb-3 tracking-wide">
-          {% for i in (1..r) %}★{% endfor %}
+            {% assign r = review.rating | plus: 0 %}
+            <div class="text-yellow-400 text-xl mb-3 tracking-wide">
+              {% for i in (1..r) %}★{% endfor %}
+            </div>
+
+            <p class="text-slate-700 font-gujarati mb-5">
+              “{{ review.content | strip_html | truncate: 180 }}”
+            </p>
+
+            <p class="font-bold text-slate-900">
+              {{ review.name | default: "Patient" }}
+            </p>
+
+          </div>
         </div>
-
-        <p class="text-slate-700 font-gujarati mb-5 leading-relaxed">
-          “{{ review.content | strip_html }}”
-        </p>
-
-        <p class="font-bold text-slate-900">
-          {{ review.name | default: "Patient" }}
-        </p>
+        {% endfor %}
 
       </div>
 
-      {% endfor %}
+      <!-- DOTS -->
+      <div id="reviewDots"
+           class="flex justify-center gap-2 mt-6"></div>
 
     </div>
+
 
     <!-- View All -->
     <div class="text-center mt-12">
@@ -723,7 +732,19 @@
             });
         });
     </script>
-    <script type="application/ld+json">
+    {% assign approved = site.reviews | where: "status", "approved" %}
+{% assign total = 0 %}
+
+{% for r in approved %}
+  {% assign total = total | plus: r.rating %}
+{% endfor %}
+
+{% assign count = approved.size %}
+{% if count > 0 %}
+{% assign avg = total | divided_by: count %}
+{% endif %}
+
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Physician",
@@ -735,15 +756,88 @@
   },
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "5",
-    "reviewCount": "{{ site.reviews | where: 'status','approved' | size }}"
+    "ratingValue": "{{ avg | default: 5 }}",
+    "reviewCount": "{{ count }}"
   }
+}
+</script>
+
+
+
+    <script>
+const slider = document.getElementById("reviewSlider");
+const dotsContainer = document.getElementById("reviewDots");
+
+if (slider && dotsContainer) {
+  const slides = slider.children;
+  let current = 0;
+  let startX = 0;
+  let autoSlide;
+
+  // Create dots
+  for (let i = 0; i < slides.length; i++) {
+    const dot = document.createElement("button");
+    dot.className = "w-3 h-3 rounded-full bg-slate-300";
+    if (i === 0) dot.classList.add("bg-teal-600");
+
+    dot.addEventListener("click", () => {
+      current = i;
+      update();
+      resetAuto();
+    });
+
+    dotsContainer.appendChild(dot);
+  }
+
+  function update() {
+    slider.style.transform = `translateX(-${current * 100}%)`;
+    [...dotsContainer.children].forEach((d, i) => {
+      d.classList.toggle("bg-teal-600", i === current);
+      d.classList.toggle("bg-slate-300", i !== current);
+    });
+  }
+
+  // Auto slide
+  function startAuto() {
+    autoSlide = setInterval(() => {
+      current = (current + 1) % slides.length;
+      update();
+    }, 5000);
+  }
+
+  function resetAuto() {
+    clearInterval(autoSlide);
+    startAuto();
+  }
+
+  // Touch swipe
+  slider.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+  });
+
+  slider.addEventListener("touchend", e => {
+    const endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50) {
+      current = (current + 1) % slides.length;
+    } else if (endX - startX > 50) {
+      current = (current - 1 + slides.length) % slides.length;
+    }
+    update();
+    resetAuto();
+  });
+
+  // Pause on hover
+  slider.addEventListener("mouseenter", () => clearInterval(autoSlide));
+  slider.addEventListener("mouseleave", startAuto);
+
+  startAuto();
 }
 </script>
 
 </body>
 
 </html>
+
 
 
 
