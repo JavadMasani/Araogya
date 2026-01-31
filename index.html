@@ -531,15 +531,14 @@
 
 <div class="relative overflow-hidden">
 
-  <!-- SLIDER -->
+  <!-- GRID SLIDER -->
   <div id="reviewSlider"
-       class="flex transition-transform duration-700 ease-in-out">
+       class="grid grid-flow-col auto-cols-full transition-transform duration-700 ease-in-out">
 
     {% assign i = 0 %}
     {% for review in approved_reviews %}
-
       {% if i == 0 or i | modulo: 3 == 0 %}
-      <div class="min-w-full flex-none px-4">
+      <div class="w-full px-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       {% endif %}
 
@@ -559,20 +558,18 @@
       </div>
 
       {% assign i = i | plus: 1 %}
-
       {% if i | modulo: 3 == 0 or forloop.last %}
         </div>
       </div>
       {% endif %}
-
     {% endfor %}
 
   </div>
 
   <!-- DOTS -->
   <div id="reviewDots" class="flex justify-center gap-2 mt-6"></div>
-
 </div>
+
 
 
 
@@ -833,6 +830,7 @@ if (slider && dots) {
 </body>
 
 </html>
+
 
 
 
