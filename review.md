@@ -3,13 +3,13 @@ layout: site
 title: Patient Review
 ---
 
-<section class="pt-28 pb-20 bg-white">
+<section class="pb-20 bg-white">
   <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
 
     <form id="reviewForm"
           class="bg-white border border-slate-200 rounded-3xl p-6 space-y-5">
 
-      <h1 class="text-2xl font-bold text-slate-900 font-gujarati text-center">
+      <h1 class="text-2xl font-bold text-slate-900 font-gujarati text-center mb-12 mt-8">
         તમારો અનુભવ શેર કરો
       </h1>
 
