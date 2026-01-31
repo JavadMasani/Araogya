@@ -8,7 +8,7 @@ title: Health Blogs
 
     <div class="mb-14 text-center">
       <h1 class="text-4xl font-bold text-slate-900 mb-3">
-        Health Tips & Insights
+        આરોગ્ય માર્ગદર્શન
       </h1>
       <p class="text-slate-500 font-gujarati">
         સ્વસ્થ જીવન માટે ઉપયોગી માહિતી અને વિગતવાર માર્ગદર્શન
