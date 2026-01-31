@@ -28,7 +28,7 @@ title: Health Blogs
 
           {% if post.thumbnail %}
             <img src="{{ post.thumbnail }}"
-                 class="h-48 w-full object-cover">
+                 class="h-48 w-full object-cover object-top">
           {% else %}
             <div class="h-48 bg-slate-200 flex items-center justify-center text-slate-400">
               <i class="fas fa-notes-medical text-5xl"></i>
