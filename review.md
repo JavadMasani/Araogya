@@ -3,7 +3,7 @@ layout: site
 title: Patient Review
 seo_title: ડૉ. જવાદ મસાણી – દર્દીઓનો અનુભવ
 seo_description: ડૉ. જવાદ મસાણી દ્વારા આપવામાં આવેલી ફિઝિયોથેરાપી સારવાર વિશે તમારો અનુભવ શેર કરો અને અન્ય દર્દીઓને માર્ગદર્શન આપો.
-thumbnail: /Araogya/assets/uploads/review-cover.jpg
+thumbnail: /Araogya/assets/uploads/review-cover.png
 ---
 
 <section class="pb-20 bg-white">
