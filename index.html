@@ -478,38 +478,34 @@
       {% for post in site.posts limit:3 %}
 
       <!-- BLOG CARD -->
-      <article
-        class="bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition">
+      <a href="{{ site.baseurl }}{{ post.url }}"
+   class="block group">
 
-        <!-- IMAGE / ICON AREA (same as your design) -->
-        {% if post.thumbnail %}
-          <img src="{{ post.thumbnail }}"
-               alt="{{ post.title }}"
-               class="h-48 w-full object-cover object-top">
-        {% else %}
-          <div class="h-48 bg-slate-200 flex items-center justify-center text-slate-400">
-            <i class="fas fa-procedures text-5xl"></i>
-          </div>
-        {% endif %}
+  <article class="bg-white border border-slate-100
+                  rounded-3xl overflow-hidden
+                  hover:shadow-md transition">
 
-        <!-- CONTENT -->
-        <div class="p-6">
-          <h3
-            class="text-xl font-bold mb-3 font-gujarati hover:text-teal-600 cursor-pointer">
-            {{ post.title }}
-          </h3>
+    <img src="{{ post.thumbnail }}"
+         class="w-full h-48 object-cover object-top">
 
-          <p class="text-slate-600 text-sm line-clamp-3 font-gujarati">
-            {{ post.excerpt | strip_html | truncate: 140 }}
-          </p>
+    <div class="p-6">
+      <h3 class="text-xl font-bold group-hover:text-teal-600 transition">
+        {{ post.title }}
+      </h3>
 
-          <a href="{{ site.baseurl }}{{ post.url }}"
-             class="mt-4 inline-block text-teal-600 font-bold text-sm uppercase">
-            Read More
-          </a>
-        </div>
+      <p class="text-slate-600 text-sm line-clamp-3 mt-2">
+        {{ post.excerpt | strip_html }}
+      </p>
 
-      </article>
+      <span class="inline-block mt-4
+                   text-teal-600 font-bold">
+        Read More →
+      </span>
+    </div>
+
+  </article>
+</a>
+
       <!-- END CARD -->
 
       {% endfor %}
@@ -807,6 +803,7 @@ if (track && dots) {
 </body>
 
 </html>
+
 
 
 
