@@ -1,6 +1,9 @@
 ---
 layout: site
 title: Patient Review
+seo_title: ડૉ. જવાદ મસાણી – દર્દીઓનો અનુભવ
+seo_description: ડૉ. જવાદ મસાણી દ્વારા આપવામાં આવેલી ફિઝિયોથેરાપી સારવાર વિશે તમારો અનુભવ શેર કરો અને અન્ય દર્દીઓને માર્ગદર્શન આપો.
+thumbnail: /Araogya/assets/uploads/review-cover.jpg
 ---
 
 <section class="pb-20 bg-white">
@@ -9,9 +12,14 @@ title: Patient Review
     <form id="reviewForm"
           class="bg-white border border-slate-200 rounded-3xl p-6 space-y-5">
 
-      <h1 class="text-2xl font-bold text-slate-900 font-gujarati text-center mb-12 mt-8">
-        તમારો અનુભવ શેર કરો
-      </h1>
+      <h1 class="text-2xl font-bold text-slate-900 font-gujarati text-center mb-6 mt-8">
+  ડૉ. જવાદ મસાણી દ્વારા આપવામાં આવેલી સારવારનો તમારો અનુભવ શેર કરો
+</h1>
+
+<p class="text-slate-600 text-center font-gujarati mb-10">
+  તમારો સાચો પ્રતિભાવ અન્ય દર્દીઓને યોગ્ય નિર્ણય લેવામાં મદદરૂપ થશે
+</p>
+
 
       <input type="text" name="name" required
         placeholder="તમારું નામ"
