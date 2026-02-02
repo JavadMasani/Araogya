@@ -440,10 +440,13 @@ title: Home
           સ્વસ્થ જીવન માટે ઉપયોગી માહિતી અને ટિપ્સ.
         </p>
       </div>
-      <a href="{{ site.baseurl }}/blogs"
+      
+        <div class="hidden md:block">
+        <a href="{{ site.baseurl }}/blogs"
          class="hidden md:block text-teal-600 font-bold hover:underline">
         View All Posts <i class="fas fa-arrow-right ml-2"></i>
       </a>
+      </div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -482,7 +485,7 @@ title: Home
       <!-- END CARD -->
 
       {% endfor %}
-<div class="text-center mt-12">
+<div class="block md:hidden text-center mt-12">
   <a href="{{ site.baseurl }}/blogs"
      class="inline-flex items-center gap-2
             text-teal-600 font-bold
@@ -742,6 +745,7 @@ if (track && dots) {
 </body>
 
 </html>
+
 
 
 
