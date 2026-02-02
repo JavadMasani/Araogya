@@ -77,7 +77,10 @@
             </div>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-4 py-4 space-y-2">
+        <div id="mobile-menu"
+     class="hidden fixed inset-0 z-40 bg-white
+            pt-24 px-6 space-y-4
+            overflow-y-auto md:hidden">
             <a href="#home" class="block py-2 font-medium">Home</a>
             <a href="#about" class="block py-2 font-medium">About</a>
             <a href="#services" class="block py-2 font-medium">Services</a>
@@ -715,19 +718,20 @@
     <script>
         // Simple Mobile Menu Toggle
         const menuBtn = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+const mobileMenu = document.getElementById('mobile-menu');
 
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+menuBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('hidden');
+  document.body.classList.toggle('overflow-hidden');
+});
 
-        // Close menu when link is clicked
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
+// Close menu on link click
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+    document.body.classList.remove('overflow-hidden');
+  });
+});
 
         // Add smooth scrolling to all links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -803,6 +807,7 @@ if (track && dots) {
 </body>
 
 </html>
+
 
 
 
