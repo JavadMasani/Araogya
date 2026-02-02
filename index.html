@@ -78,15 +78,12 @@
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu"
-     class="hidden fixed inset-0 z-40 bg-white
-            pt-24 px-6 space-y-4
-            overflow-y-auto md:hidden">
-            <a href="#home" class="block py-2 font-medium">Home</a>
-            <a href="#about" class="block py-2 font-medium">About</a>
-            <a href="#services" class="block py-2 font-medium">Services</a>
-            <a href="#blog" class="block py-2 font-medium">Blog</a>
-            <a href="#contact" class="block py-2 font-bold text-teal-600">Contact Us</a>
-        </div>
+     class="hidden md:hidden bg-white border-t px-4 py-4 space-y-2">
+  <a href="/" class="block py-2 font-medium">Home</a>
+  <a href="/Araogya/blogs" class="block py-2 font-medium">Blogs</a>
+  <a href="/Araogya/reviews" class="block py-2 font-medium">Reviews</a>
+  <a href="/Araogya/review" class="block py-2 font-medium">Give Review</a>
+</div>
     </nav>
 
     <!-- Hero Section -->
@@ -722,15 +719,6 @@ const mobileMenu = document.getElementById('mobile-menu');
 
 menuBtn.addEventListener('click', () => {
   mobileMenu.classList.toggle('hidden');
-  document.body.classList.toggle('overflow-hidden');
-});
-
-// Close menu on link click
-mobileMenu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    mobileMenu.classList.add('hidden');
-    document.body.classList.remove('overflow-hidden');
-  });
 });
 
         // Add smooth scrolling to all links
@@ -807,6 +795,7 @@ if (track && dots) {
 </body>
 
 </html>
+
 
 
 
